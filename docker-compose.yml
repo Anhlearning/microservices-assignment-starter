@@ -10,7 +10,28 @@ services:
     ports:
       - "5002:5000"
 
-  gateway:
-    build: ./gateway
+  auth-service:
+    build: ./services/auth-service
     ports:
-      - "8080:8000"
+      - "5003:5000"
+  user-service:
+    build: ./services/user-service
+    ports:
+      - "5004:5000"
+  exam-service:
+    build: ./services/exam-service
+    ports:
+      - "5005:5000"
+  result-service:
+    build: ./services/result-service
+    ports:
+      - "5006:5000"
+  quiz-service:
+    build: ./services/quiz-service
+    ports:
+      - "5007:5000"
+      
+  # gateway:
+  #   build: ./gateway
+  #   ports:
+  #     - "8080:8000"
